@@ -110,7 +110,7 @@ defmodule AppAlumno.Cursos do
   end
 
   def filter_fecha_cursos(fecha) do
-     filter = from(c in Curso, where: c.fechaini >= ^fecha and c.fechafin >= ^fecha )
+     filter = from(c in Curso, where: c.fechaini >= ^fecha and c.fechafin <= ^fecha )
      IO.inspect(filter)
     Repo.all(filter)
   end
